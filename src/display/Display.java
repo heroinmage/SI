@@ -21,6 +21,7 @@ public class Display extends Canvas implements Runnable {
         frame.setTitle("Space Invaders");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
         display.start();
     }

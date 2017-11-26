@@ -17,6 +17,8 @@ public class MenuScreen extends SuperStateMachine implements KeyListener {
     private Font startFont = new Font("Arial", Font.PLAIN, 32);
     private String tittle = "Space Invaders";
     private String start = "Press Enter";
+    private String credits = "Created by N.Jurisevic                                   Originally created by Tomohiro Nishikado in 1978";
+    private Font creditsFont = new Font("Arial", Font.PLAIN, 18);
 
     public MenuScreen(StateMachine stateMachine) {
         super(stateMachine);
@@ -30,16 +32,22 @@ public class MenuScreen extends SuperStateMachine implements KeyListener {
     @Override
     public void draw(Graphics2D g) {
         g.setFont(tittleFont);
+        
         int tittleWidth = g.getFontMetrics().stringWidth(tittle);
+        
         g.setColor(Color.yellow);
         g.drawString(tittle, ((Display.WIDTH / 2) - (tittleWidth / 2)) - 2, (Display.HEIGHT / 2) - 123);
-        g.setColor(Color.green);
+        g.setColor(Color.blue);
         g.drawString(tittle, (Display.WIDTH / 2) - (tittleWidth / 2), (Display.HEIGHT / 2) - 125);
 
         g.setFont(startFont);
         g.setColor(Color.white);
+        
         int startWidth = g.getFontMetrics().stringWidth(start);
+        
         g.drawString(start, (Display.WIDTH / 2) - (startWidth / 2), (Display.HEIGHT / 2) + 75);
+        g.setFont(creditsFont);
+        g.drawString(credits, (Display.WIDTH / 2) - (startWidth + 200), (int)(Display.HEIGHT / 1.2) + 75);
     }
 
     @Override
